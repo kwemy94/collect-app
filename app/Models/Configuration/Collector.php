@@ -22,7 +22,7 @@ class Collector extends Model
 
     public function sectors() {
         
-        return $this->hasMany(Sector::class);
+        return $this->belongsToMany(Sector::class);
     }
 
 

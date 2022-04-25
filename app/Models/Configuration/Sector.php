@@ -17,7 +17,7 @@ class Sector extends Model
 
     public function collectors() {
         
-        return $this->hasMany(Collector::class);
+        return $this->belongsToMany(Collector::class);
     }
 
     public function clients() {
