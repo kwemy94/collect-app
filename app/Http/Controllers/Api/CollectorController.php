@@ -15,10 +15,13 @@ class CollectorController extends Controller
         $collectors = Collector::latest()->get()
              ->map(function ($collector){
                 return [
+                    'id' => $collector->id,
                     'name' => $collector->name,
-                'phone' => $collector->phone,
-                'email' => $collector->email,
-                'cni' => $collector->cni
+                    'phone' => $collector->phone,
+                    'email' => $collector->email,
+                    'cni' => $collector->cni,
+                    'date_of_issue' => $collector->date_of_issue,
+                    'delivered_in' => $collector->delivered_in
                 ];
             });
         return response()->json($collectors);
